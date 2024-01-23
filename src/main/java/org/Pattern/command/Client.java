@@ -18,15 +18,21 @@ public class Client {
         order2.setDiningTable(2);
         order2.setFood("炸鸡",1);
         order2.setFood("可乐",2);
+        //创建第三个订单对象
+        Order order3=new Order();
+        order3.setDiningTable(3);
+        order3.setFood("鸡翅",3);
         //创建厨师对象
         SeniorChef reciver=new SeniorChef();
         //创建命令对象
         OrderCommand orderCommand1=new OrderCommand(reciver,order1);
         OrderCommand orderCommand2=new OrderCommand(reciver,order2);
+        OrderCommand orderCommand3=new OrderCommand(reciver,order3);
         //创建调用者（服务员对象）
         Waitor invoke=new Waitor();
         invoke.setCommand(orderCommand1);
         invoke.setCommand(orderCommand2);
+        invoke.setCommand(orderCommand3);
         //服务员发起命令
         invoke.Orderup();
     }
