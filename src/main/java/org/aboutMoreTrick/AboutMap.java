@@ -40,6 +40,15 @@ public class AboutMap {
     }
     //map的使用技巧
     void MapTrick(HashMap<Integer, Integer> map){
+    //遍历HashMap:使用keySet(),或者entrySet()方法
+        for (Integer key : map.keySet()) {
+            Integer integer = map.get(key);
+            System.out.println(integer);
+        }
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            entry.getKey();
+            entry.getValue();
 
+        }
     }
 }
