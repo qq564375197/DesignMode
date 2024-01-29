@@ -40,6 +40,7 @@ public class AboutMap {
     }
     //map的使用技巧
     void MapTrick(HashMap<Integer, Integer> map){
+        HashMap<Integer, Integer> map2=new HashMap<>();
     //遍历HashMap:使用keySet(),或者entrySet()方法
         for (Integer key : map.keySet()) {
             Integer integer = map.get(key);
@@ -50,5 +51,8 @@ public class AboutMap {
             entry.getValue();
 
         }
+        //合并两个HashMap。可以使用putAll方法--遵循key唯一。相同则覆盖的逻辑
+        map.putAll(map2);
+
     }
 }
