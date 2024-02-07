@@ -46,7 +46,6 @@ public class AboutMap {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             entry.getKey();
             entry.getValue();
-
         }
         //合并两个HashMap。可以使用putAll方法--遵循key唯一。相同则覆盖的逻辑
         map.putAll(map2);
@@ -90,6 +89,36 @@ public class AboutMap {
                 break;
             }
             map.put(nums[i], i);    // 如果没找到匹配对，就把访问过的元素和下标加入到map中
+        }
+        return res;
+    }
+    /**
+     *leetcode:128.最长连续序列
+     * */
+    public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        HashSet<Integer> numSet=new HashSet<>();
+        //数据添加进set里面
+        for(int i:nums){
+            numSet.add(i);
+        }
+        //给定一个最小值
+        int res = 0;
+        for (int num : nums) {
+            // 如果当前数字减去1不在集合中，说明它是一个连续序列的起始值
+            if (!numSet.contains(num - 1)) {
+                int currentNum = num;
+                int currentStreak = 1;
+                // 计算以当前数字为起始值的连续序列的长度
+                while (numSet.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentStreak++;
+                }
+                // 更新最长连续序列的长度
+                res = Math.max(res, currentStreak);
+            }
         }
         return res;
     }
