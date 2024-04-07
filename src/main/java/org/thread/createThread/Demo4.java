@@ -38,6 +38,4 @@ public class Demo4 {
         //线程池关闭
         executor.shutdown();
     }
-
-
 }

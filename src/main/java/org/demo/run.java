@@ -1,5 +1,7 @@
 package org.demo;
 
+import java.util.HashSet;
+
 /**
  * @author Ayin
  * @verison 1.0
@@ -9,8 +11,14 @@ package org.demo;
 public class run {
     public static void main(String[] args) {
         //创建对象时
-        Foo foo = new Foo();//1,3,x=0,z=8
+        //Foo foo = new Foo();//1,3,x=0,z=8
         //调用方法时候
-        Foo.say2();//2,6,7
+        //Foo.say2();//2,6,7
+
+        //
+        HashSet<String> set=new HashSet<>();
+        set.add("a");
+        set.add(null);
+        System.out.println(set.size());
     }
 }

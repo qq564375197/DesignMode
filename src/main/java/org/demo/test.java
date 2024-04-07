@@ -8,7 +8,7 @@ package org.demo;
  */
 public class test {
     private  static  final  test INSTANCE=new test();
-    public test(){
+    private test(){
     }
     public static test getInstance(){
         return INSTANCE;

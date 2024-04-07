@@ -8,7 +8,7 @@ package org.demo;
  */
 public class single {
     private static final single INTANCE=new single();
-    public single(){}
+    private single(){}
     private  static single getInstance(){
         return INTANCE;
     }

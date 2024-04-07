@@ -10,6 +10,11 @@
     <dependencies>
         <!--自定义注解需要的依赖-->
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.76</version> <!-- 版本号根据实际情况选择 -->
+        </dependency>
+        <dependency>
             <groupId>aopalliance</groupId>
             <artifactId>aopalliance</artifactId>
             <version>1.0</version>

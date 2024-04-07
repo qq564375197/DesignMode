@@ -4,6 +4,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author Ayin
@@ -15,8 +16,6 @@ public class Client {
     public static void main(String[] args) {
         //manyThreadTwo();
         //manythree();
-        UUID uuid = UUID.randomUUID();
-
     }
     /**
      * 创建多线程1：继承Thread类实现多线程调用
@@ -44,7 +43,7 @@ public class Client {
         thread3.start();
     }
     /**
-     * 创建多线程3：实现CallAble<String>接口
+     * 创建多线程3：实现CallAble<T>接口
      * */
     private static void manythree(){
         //创建三个线程
@@ -65,10 +64,15 @@ public class Client {
         thread3.start();
     }
     /**
-     *  创建多线程3：实现线程池类
+     *  创建多线程4：实现线程池类
      * */
     private static void manyfour(){
-        
+        Demo2 demo2=new Demo2();
+        Demo4 demo4 = new Demo4();
+        //线程池开启
+        demo4.executor.execute(demo2);
+        //线程池关闭
+        demo4.executor.shutdown();
     }
 
 }
