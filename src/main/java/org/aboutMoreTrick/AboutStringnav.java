@@ -1,9 +1,8 @@
 package org.aboutMoreTrick;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * @author Ayin
@@ -13,7 +12,12 @@ import java.util.List;
  */
 public class AboutStringnav {
     public static void main(String[] args) {
-        reverseWords("a good   example");
+        String a="123";
+        System.out.println(a.length());
+        int[] aa=new int[2];
+
+        //reverseWords("a good   example");
+        //isSubsequence("acb","ahbgdc");
 //        BigDecimal a= new BigDecimal(0);
 //        List<Integer> list=new ArrayList<>();
 //        list.add(2000);
@@ -81,4 +85,18 @@ public class AboutStringnav {
         }
         return count;
     }
-}
+    /**
+     * 子序列--有序
+     * */
+    public static boolean isSubsequence(String s, String t) {
+        int n=s.length(),m=t.length();
+        int i=0,j=0;
+        while(i<n&&j<m){
+            if(s.charAt(i)==t.charAt(j)){
+                i++;
+            }
+            j++;
+        }
+        return i==n;
+    }
+    }
