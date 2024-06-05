@@ -14,9 +14,9 @@ public class AboutStream {
         List<String> name=new ArrayList<>();
 //        trick(name);
         List<Integer> num=new ArrayList<>();
-        //trickB(num);
+        trickB(num);
         //trickC();
-        trickD();
+        //trickD();
     }
     /**
      * 1.目的：用于简化集合和数组操作的API
@@ -33,8 +33,9 @@ public class AboutStream {
      * */
     private static  void trickB(List<Integer> num){
         Collections.addAll(num,1,2,3,4,5,6,7,8);
-             num.stream().filter(e -> e % 2 == 0)
-                .collect(Collectors.toList()).forEach(System.out::println);
+        int sum = num.stream().filter(e -> e % 2 == 1)
+                .collect(Collectors.toList()).stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
     }
     /**
      * Stream流的map方法:将流中的每个元素映射为另一个元素，生成一个新的流。
